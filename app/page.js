@@ -39,8 +39,9 @@ const deleterender=()=>{
   });
 
   return (
-    <div className="h-screen w-full flex flex-col justify-center bg-slate-700 p-56">
-      <div className="h-11 w-4/5">
+    <div  className=" h-auto w-screen flex justify-center items-center ">
+    <div className="   h-10 w-full my-5 flex justify-between items-center rounded flex-col">
+      <div className="h-11 w-3/5 my-8">
         <form onSubmit={submitHandler}>
           <input
             type="text"
@@ -56,6 +57,7 @@ const deleterender=()=>{
       
       {renderTast}
       </div>
+    </div>
     </div>
   );
 };
