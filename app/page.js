@@ -7,13 +7,17 @@ const Page = () => {
   const[arrlist,setarrlist]=useState([])
   const submitHandler = (e) => {
     e.preventDefault();
+    if(todo!==''){
     console.log("Todo submitted:", todo);
     setarrlist([...arrlist,todo])
     console.log(arrlist,todo);
+    setTodo("");
+    }
   };
 
   const handleChange = (e) => {
     setTodo(e.target.value);
+
     
   };
 
@@ -24,9 +28,9 @@ const deleterender=()=>{
     setarrlist(copytask);
 }
     return <>
-      <div className=" bg-slate-950 text-white h-10 w-full my-5 flex justify-between items-center ">
-      <span className="text-white text-center ">{text}</span>
-        <button className="bg-red-800 h-10 w-28 border-x-orange-50 border-y-orange-50 rounded" value="Delete" onClick={()=>{
+      <div className=" bg-slate-950 text-white h-10 w-full my-5 flex justify-between items-center rounded">
+      <span className="text-white text-center mx-6">{text}</span>
+        <button className="bg-red-800 h-8 w-20 border-x-orange-50 border-y-orange-50 rounded mx-5" value="Delete" onClick={()=>{
           deleterender();
         }}>Delete</button>
       </div>
@@ -45,7 +49,7 @@ const deleterender=()=>{
             value={todo}
             onChange={handleChange}
           />
-          <input type="submit" value="submit" className="p-2 w-32 border-x rounded mx-3 border-y" />
+          <input type="submit" value="submit" className="p-2 w-32 border-x rounded mx-3 border-y " />
         </form>
       </div>
       <div className=" text-white h-auto w-3/5 my-5 ">
